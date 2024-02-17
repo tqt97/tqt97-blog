@@ -13,3 +13,8 @@ php artisan serve
 ```
 
 Open browser and go to link **127.0.0.1:8000**
+
+or you can run this script in terminal
+```
+bash ./setup_project.sh
+```
