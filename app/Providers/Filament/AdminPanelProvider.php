@@ -10,10 +10,11 @@ use Filament\Support\Colors\Color;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
+use Awcodes\FilamentStickyHeader\StickyHeaderPlugin;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
 // use Swis\Filament\Backgrounds\ImageProviders\MyImages;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -63,7 +64,11 @@ class AdminPanelProvider extends PanelProvider
                     //         ->directory('images/backgrounds')
                     // )
                     ->remember(900)
-                    ->showAttribution(false)
+                    ->showAttribution(false),
+                StickyHeaderPlugin::make()
+                    ->floating()
+                    ->colored(),
+
             ]);
     }
 }
