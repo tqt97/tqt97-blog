@@ -8,12 +8,13 @@ use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\MaxWidth;
+use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
+// use Awcodes\FilamentStickyHeader\StickyHeaderPlugin;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Awcodes\FilamentStickyHeader\StickyHeaderPlugin;
-use Illuminate\Routing\Middleware\SubstituteBindings;
 // use Swis\Filament\Backgrounds\ImageProviders\MyImages;
+use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -66,6 +67,16 @@ class AdminPanelProvider extends PanelProvider
             ->maxContentWidth(MaxWidth::Full)
             ->sidebarCollapsibleOnDesktop()
             ->sidebarFullyCollapsibleOnDesktop()
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label(fn (): string => __('blogs'))
+                    ->icon('heroicon-o-book-open')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(fn (): string => __('settings'))
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->collapsed(),
+            ])
             ->plugins([
                 FilamentBackgroundsPlugin::make()
                     // ->imageProvider(
@@ -74,9 +85,9 @@ class AdminPanelProvider extends PanelProvider
                     // )
                     ->remember(900)
                     ->showAttribution(false),
-                StickyHeaderPlugin::make()
-                    ->floating()
-                    ->colored(),
+                // StickyHeaderPlugin::make()
+                    // ->floating()
+                    // ->colored(),
 
             ]);
     }

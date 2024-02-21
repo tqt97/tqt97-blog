@@ -13,6 +13,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'slug',
+        'published'
     ];
 
     public function posts(): BelongsToMany

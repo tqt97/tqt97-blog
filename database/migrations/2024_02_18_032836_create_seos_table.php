@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('meta_keywords', 255)->nullable();
             $table->string('meta_robots', 255)->nullable();
             $table->string('meta_author', 255)->nullable();
-            $table->string('meta_pinned', 255)->nullable();
             $table->string('meta_canonical', 255)->nullable();
             $table->string('meta_og_title', 255)->nullable();
             $table->string('meta_og_description', 255)->nullable();
@@ -26,14 +25,14 @@ return new class extends Migration
             $table->string('meta_og_type', 255)->nullable();
             $table->string('meta_og_url', 255)->nullable();
             $table->string('meta_og_locale', 255)->nullable();
-            $table->string('meta_twitter_title', 255)->nullable();
-            $table->string('meta_twitter_description', 255)->nullable();
-            $table->string('meta_twitter_image', 255)->nullable();
-            $table->string('meta_twitter_card', 255)->nullable();
-            $table->string('meta_twitter_site', 255)->nullable();
-            $table->string('meta_twitter_creator', 255)->nullable();
-            $table->string('meta_twitter_url', 255)->nullable();
-            $table->string('meta_twitter_locale', 255)->nullable();
+            // $table->string('meta_twitter_title', 255)->nullable();
+            // $table->string('meta_twitter_description', 255)->nullable();
+            // $table->string('meta_twitter_image', 255)->nullable();
+            // $table->string('meta_twitter_card', 255)->nullable();
+            // $table->string('meta_twitter_site', 255)->nullable();
+            // $table->string('meta_twitter_creator', 255)->nullable();
+            // $table->string('meta_twitter_url', 255)->nullable();
+            // $table->string('meta_twitter_locale', 255)->nullable();
             $table->timestamps();
         });
     }

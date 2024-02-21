@@ -22,6 +22,9 @@ class Post extends Model
         'content',
         'featured',
         'published_at',
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
     ];
 
     public function user(): BelongsTo
